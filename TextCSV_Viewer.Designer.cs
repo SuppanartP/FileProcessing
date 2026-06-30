@@ -28,197 +28,246 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.label1 = new System.Windows.Forms.Label();
-			this.tbFileName = new System.Windows.Forms.TextBox();
-			this.btBrowse = new System.Windows.Forms.Button();
-			this.tabcMain = new System.Windows.Forms.TabControl();
-			this.tabpText = new System.Windows.Forms.TabPage();
-			this.rtbShow = new System.Windows.Forms.RichTextBox();
-			this.btRead = new System.Windows.Forms.Button();
-			this.tabpCSV = new System.Windows.Forms.TabPage();
-			this.dgvData = new System.Windows.Forms.DataGridView();
-			this.btReadCSV = new System.Windows.Forms.Button();
-			this.RegisterDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.SHA256_Hash = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.MD5_Hash = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.SHA1_Hash = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.tabcMain.SuspendLayout();
-			this.tabpText.SuspendLayout();
-			this.tabpCSV.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
-			this.SuspendLayout();
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(5, 16);
-			this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(41, 24);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "File";
-			// 
-			// tbFileName
-			// 
-			this.tbFileName.Location = new System.Drawing.Point(128, 16);
-			this.tbFileName.Margin = new System.Windows.Forms.Padding(4);
-			this.tbFileName.Name = "tbFileName";
-			this.tbFileName.Size = new System.Drawing.Size(1111, 29);
-			this.tbFileName.TabIndex = 1;
-			this.tbFileName.Text = "D:\\YutData\\DistributedHome\\cdti.Code\\FileProcessing\\data\\malware_500.csv";
-			// 
-			// btBrowse
-			// 
-			this.btBrowse.Location = new System.Drawing.Point(1287, 9);
-			this.btBrowse.Margin = new System.Windows.Forms.Padding(4);
-			this.btBrowse.Name = "btBrowse";
-			this.btBrowse.Size = new System.Drawing.Size(138, 40);
-			this.btBrowse.TabIndex = 2;
-			this.btBrowse.Text = "Browse";
-			this.btBrowse.UseVisualStyleBackColor = true;
-			this.btBrowse.Click += new System.EventHandler(this.btBrowse_Click);
-			// 
-			// tabcMain
-			// 
-			this.tabcMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbFileName = new System.Windows.Forms.TextBox();
+            this.btBrowse = new System.Windows.Forms.Button();
+            this.tabcMain = new System.Windows.Forms.TabControl();
+            this.tabpText = new System.Windows.Forms.TabPage();
+            this.rtbShow = new System.Windows.Forms.RichTextBox();
+            this.btRead = new System.Windows.Forms.Button();
+            this.tabpCSV = new System.Windows.Forms.TabPage();
+            this.dgvData = new System.Windows.Forms.DataGridView();
+            this.RegisterDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SHA256_Hash = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MD5_Hash = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SHA1_Hash = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btReadCSV = new System.Windows.Forms.Button();
+            this.lblStart = new System.Windows.Forms.Label();
+            this.tbStart = new System.Windows.Forms.TextBox();
+            this.lblEnd = new System.Windows.Forms.Label();
+            this.tbEnd = new System.Windows.Forms.TextBox();
+            this.lblType = new System.Windows.Forms.Label();
+            this.tbType = new System.Windows.Forms.TextBox();
+            this.tabcMain.SuspendLayout();
+            this.tabpText.SuspendLayout();
+            this.tabpCSV.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(4, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "File";
+            // 
+            // tbFileName
+            // 
+            this.tbFileName.Location = new System.Drawing.Point(93, 11);
+            this.tbFileName.Name = "tbFileName";
+            this.tbFileName.Size = new System.Drawing.Size(809, 22);
+            this.tbFileName.TabIndex = 1;
+            this.tbFileName.Text = "D:\\YutData\\DistributedHome\\cdti.Code\\FileProcessing\\data\\malware_500.csv";
+            // 
+            // btBrowse
+            // 
+            this.btBrowse.Location = new System.Drawing.Point(936, 6);
+            this.btBrowse.Name = "btBrowse";
+            this.btBrowse.Size = new System.Drawing.Size(100, 27);
+            this.btBrowse.TabIndex = 2;
+            this.btBrowse.Text = "Browse";
+            this.btBrowse.UseVisualStyleBackColor = true;
+            this.btBrowse.Click += new System.EventHandler(this.btBrowse_Click);
+            // 
+            // tabcMain
+            // 
+            this.tabcMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.tabcMain.Controls.Add(this.tabpText);
-			this.tabcMain.Controls.Add(this.tabpCSV);
-			this.tabcMain.Location = new System.Drawing.Point(15, 57);
-			this.tabcMain.Margin = new System.Windows.Forms.Padding(4);
-			this.tabcMain.Name = "tabcMain";
-			this.tabcMain.SelectedIndex = 0;
-			this.tabcMain.Size = new System.Drawing.Size(1452, 1333);
-			this.tabcMain.TabIndex = 3;
-			// 
-			// tabpText
-			// 
-			this.tabpText.Controls.Add(this.rtbShow);
-			this.tabpText.Controls.Add(this.btRead);
-			this.tabpText.Location = new System.Drawing.Point(4, 33);
-			this.tabpText.Margin = new System.Windows.Forms.Padding(4);
-			this.tabpText.Name = "tabpText";
-			this.tabpText.Padding = new System.Windows.Forms.Padding(4);
-			this.tabpText.Size = new System.Drawing.Size(1444, 1296);
-			this.tabpText.TabIndex = 0;
-			this.tabpText.Text = "Text";
-			this.tabpText.UseVisualStyleBackColor = true;
-			// 
-			// rtbShow
-			// 
-			this.rtbShow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tabcMain.Controls.Add(this.tabpText);
+            this.tabcMain.Controls.Add(this.tabpCSV);
+            this.tabcMain.Location = new System.Drawing.Point(11, 143);
+            this.tabcMain.Name = "tabcMain";
+            this.tabcMain.SelectedIndex = 0;
+            this.tabcMain.Size = new System.Drawing.Size(1056, 784);
+            this.tabcMain.TabIndex = 3;
+            // 
+            // tabpText
+            // 
+            this.tabpText.Controls.Add(this.rtbShow);
+            this.tabpText.Controls.Add(this.btRead);
+            this.tabpText.Location = new System.Drawing.Point(4, 25);
+            this.tabpText.Name = "tabpText";
+            this.tabpText.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabpText.Size = new System.Drawing.Size(1048, 755);
+            this.tabpText.TabIndex = 0;
+            this.tabpText.Text = "Text";
+            this.tabpText.UseVisualStyleBackColor = true;
+            // 
+            // rtbShow
+            // 
+            this.rtbShow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.rtbShow.Location = new System.Drawing.Point(21, 73);
-			this.rtbShow.Margin = new System.Windows.Forms.Padding(4);
-			this.rtbShow.Name = "rtbShow";
-			this.rtbShow.Size = new System.Drawing.Size(1415, 1204);
-			this.rtbShow.TabIndex = 1;
-			this.rtbShow.Text = "";
-			this.rtbShow.WordWrap = false;
-			// 
-			// btRead
-			// 
-			this.btRead.Location = new System.Drawing.Point(21, 19);
-			this.btRead.Margin = new System.Windows.Forms.Padding(4);
-			this.btRead.Name = "btRead";
-			this.btRead.Size = new System.Drawing.Size(141, 46);
-			this.btRead.TabIndex = 0;
-			this.btRead.Text = "read as text file";
-			this.btRead.UseVisualStyleBackColor = true;
-			this.btRead.Click += new System.EventHandler(this.btRead_Click);
-			// 
-			// tabpCSV
-			// 
-			this.tabpCSV.Controls.Add(this.dgvData);
-			this.tabpCSV.Controls.Add(this.btReadCSV);
-			this.tabpCSV.Location = new System.Drawing.Point(4, 33);
-			this.tabpCSV.Margin = new System.Windows.Forms.Padding(4);
-			this.tabpCSV.Name = "tabpCSV";
-			this.tabpCSV.Padding = new System.Windows.Forms.Padding(4);
-			this.tabpCSV.Size = new System.Drawing.Size(1444, 1296);
-			this.tabpCSV.TabIndex = 1;
-			this.tabpCSV.Text = "CSV";
-			this.tabpCSV.UseVisualStyleBackColor = true;
-			// 
-			// dgvData
-			// 
-			this.dgvData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.rtbShow.Location = new System.Drawing.Point(15, 49);
+            this.rtbShow.Name = "rtbShow";
+            this.rtbShow.Size = new System.Drawing.Size(1030, 699);
+            this.rtbShow.TabIndex = 1;
+            this.rtbShow.Text = "";
+            this.rtbShow.WordWrap = false;
+            // 
+            // btRead
+            // 
+            this.btRead.Location = new System.Drawing.Point(15, 13);
+            this.btRead.Name = "btRead";
+            this.btRead.Size = new System.Drawing.Size(103, 31);
+            this.btRead.TabIndex = 0;
+            this.btRead.Text = "read as text file";
+            this.btRead.UseVisualStyleBackColor = true;
+            this.btRead.Click += new System.EventHandler(this.btRead_Click);
+            // 
+            // tabpCSV
+            // 
+            this.tabpCSV.Controls.Add(this.dgvData);
+            this.tabpCSV.Controls.Add(this.btReadCSV);
+            this.tabpCSV.Location = new System.Drawing.Point(4, 25);
+            this.tabpCSV.Name = "tabpCSV";
+            this.tabpCSV.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabpCSV.Size = new System.Drawing.Size(1048, 860);
+            this.tabpCSV.TabIndex = 1;
+            this.tabpCSV.Text = "CSV";
+            this.tabpCSV.UseVisualStyleBackColor = true;
+            // 
+            // dgvData
+            // 
+            this.dgvData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RegisterDate,
             this.SHA256_Hash,
             this.MD5_Hash,
             this.SHA1_Hash});
-			this.dgvData.Location = new System.Drawing.Point(30, 68);
-			this.dgvData.Margin = new System.Windows.Forms.Padding(4);
-			this.dgvData.Name = "dgvData";
-			this.dgvData.RowHeadersWidth = 62;
-			this.dgvData.RowTemplate.Height = 28;
-			this.dgvData.Size = new System.Drawing.Size(1385, 1204);
-			this.dgvData.TabIndex = 1;
-			// 
-			// btReadCSV
-			// 
-			this.btReadCSV.Location = new System.Drawing.Point(28, 8);
-			this.btReadCSV.Margin = new System.Windows.Forms.Padding(4);
-			this.btReadCSV.Name = "btReadCSV";
-			this.btReadCSV.Size = new System.Drawing.Size(131, 43);
-			this.btReadCSV.TabIndex = 0;
-			this.btReadCSV.Text = "read as csv";
-			this.btReadCSV.UseVisualStyleBackColor = true;
-			this.btReadCSV.Click += new System.EventHandler(this.btReadCSV_Click);
-			// 
-			// RegisterDate
-			// 
-			this.RegisterDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.RegisterDate.HeaderText = "Date";
-			this.RegisterDate.MinimumWidth = 8;
-			this.RegisterDate.Name = "RegisterDate";
-			this.RegisterDate.Width = 84;
-			// 
-			// SHA256_Hash
-			// 
-			this.SHA256_Hash.HeaderText = "SHA256 Hash";
-			this.SHA256_Hash.MinimumWidth = 8;
-			this.SHA256_Hash.Name = "SHA256_Hash";
-			this.SHA256_Hash.Width = 150;
-			// 
-			// MD5_Hash
-			// 
-			this.MD5_Hash.HeaderText = "MD5Hash";
-			this.MD5_Hash.MinimumWidth = 8;
-			this.MD5_Hash.Name = "MD5_Hash";
-			this.MD5_Hash.Width = 150;
-			// 
-			// SHA1_Hash
-			// 
-			this.SHA1_Hash.HeaderText = "SHA1 Hash";
-			this.SHA1_Hash.MinimumWidth = 8;
-			this.SHA1_Hash.Name = "SHA1_Hash";
-			this.SHA1_Hash.Width = 150;
-			// 
-			// frmTextView
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1481, 1403);
-			this.Controls.Add(this.tabcMain);
-			this.Controls.Add(this.btBrowse);
-			this.Controls.Add(this.tbFileName);
-			this.Controls.Add(this.label1);
-			this.Margin = new System.Windows.Forms.Padding(4);
-			this.Name = "frmTextView";
-			this.Text = "Text/CSV viewer";
-			this.tabcMain.ResumeLayout(false);
-			this.tabpText.ResumeLayout(false);
-			this.tabpCSV.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            this.dgvData.Location = new System.Drawing.Point(22, 45);
+            this.dgvData.Name = "dgvData";
+            this.dgvData.RowHeadersWidth = 62;
+            this.dgvData.RowTemplate.Height = 28;
+            this.dgvData.Size = new System.Drawing.Size(1007, 803);
+            this.dgvData.TabIndex = 1;
+            // 
+            // RegisterDate
+            // 
+            this.RegisterDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.RegisterDate.HeaderText = "Date";
+            this.RegisterDate.MinimumWidth = 8;
+            this.RegisterDate.Name = "RegisterDate";
+            this.RegisterDate.Width = 65;
+            // 
+            // SHA256_Hash
+            // 
+            this.SHA256_Hash.HeaderText = "SHA256 Hash";
+            this.SHA256_Hash.MinimumWidth = 8;
+            this.SHA256_Hash.Name = "SHA256_Hash";
+            this.SHA256_Hash.Width = 150;
+            // 
+            // MD5_Hash
+            // 
+            this.MD5_Hash.HeaderText = "MD5Hash";
+            this.MD5_Hash.MinimumWidth = 8;
+            this.MD5_Hash.Name = "MD5_Hash";
+            this.MD5_Hash.Width = 150;
+            // 
+            // SHA1_Hash
+            // 
+            this.SHA1_Hash.HeaderText = "SHA1 Hash";
+            this.SHA1_Hash.MinimumWidth = 8;
+            this.SHA1_Hash.Name = "SHA1_Hash";
+            this.SHA1_Hash.Width = 150;
+            // 
+            // btReadCSV
+            // 
+            this.btReadCSV.Location = new System.Drawing.Point(20, 5);
+            this.btReadCSV.Name = "btReadCSV";
+            this.btReadCSV.Size = new System.Drawing.Size(95, 29);
+            this.btReadCSV.TabIndex = 0;
+            this.btReadCSV.Text = "read as csv";
+            this.btReadCSV.UseVisualStyleBackColor = true;
+            this.btReadCSV.Click += new System.EventHandler(this.btReadCSV_Click);
+            // 
+            // lblStart
+            // 
+            this.lblStart.AutoSize = true;
+            this.lblStart.Location = new System.Drawing.Point(90, 47);
+            this.lblStart.Name = "lblStart";
+            this.lblStart.Size = new System.Drawing.Size(56, 16);
+            this.lblStart.TabIndex = 4;
+            this.lblStart.Text = "Start (m)";
+            // 
+            // tbStart
+            // 
+            this.tbStart.Location = new System.Drawing.Point(170, 44);
+            this.tbStart.Name = "tbStart";
+            this.tbStart.Size = new System.Drawing.Size(100, 22);
+            this.tbStart.TabIndex = 5;
+            // 
+            // lblEnd
+            // 
+            this.lblEnd.AutoSize = true;
+            this.lblEnd.Location = new System.Drawing.Point(90, 82);
+            this.lblEnd.Name = "lblEnd";
+            this.lblEnd.Size = new System.Drawing.Size(49, 16);
+            this.lblEnd.TabIndex = 6;
+            this.lblEnd.Text = "End (n)";
+            // 
+            // tbEnd
+            // 
+            this.tbEnd.Location = new System.Drawing.Point(170, 79);
+            this.tbEnd.Name = "tbEnd";
+            this.tbEnd.Size = new System.Drawing.Size(100, 22);
+            this.tbEnd.TabIndex = 7;
+            // 
+            // lblType
+            // 
+            this.lblType.AutoSize = true;
+            this.lblType.Location = new System.Drawing.Point(90, 115);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(64, 16);
+            this.lblType.TabIndex = 8;
+            this.lblType.Text = "File Type";
+            // 
+            // tbType
+            // 
+            this.tbType.Location = new System.Drawing.Point(170, 115);
+            this.tbType.Name = "tbType";
+            this.tbType.Size = new System.Drawing.Size(100, 22);
+            this.tbType.TabIndex = 9;
+            // 
+            // frmTextView
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1077, 783);
+            this.Controls.Add(this.tbType);
+            this.Controls.Add(this.lblType);
+            this.Controls.Add(this.tbEnd);
+            this.Controls.Add(this.lblEnd);
+            this.Controls.Add(this.tbStart);
+            this.Controls.Add(this.lblStart);
+            this.Controls.Add(this.tabcMain);
+            this.Controls.Add(this.btBrowse);
+            this.Controls.Add(this.tbFileName);
+            this.Controls.Add(this.label1);
+            this.Name = "frmTextView";
+            this.Text = "Text/CSV viewer";
+            this.tabcMain.ResumeLayout(false);
+            this.tabpText.ResumeLayout(false);
+            this.tabpCSV.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 
@@ -238,6 +287,12 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn SHA256_Hash;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MD5_Hash;
 		private System.Windows.Forms.DataGridViewTextBoxColumn SHA1_Hash;
-	}
+        private System.Windows.Forms.Label lblStart;
+        private System.Windows.Forms.TextBox tbStart;
+        private System.Windows.Forms.Label lblEnd;
+        private System.Windows.Forms.TextBox tbEnd;
+        private System.Windows.Forms.Label lblType;
+        private System.Windows.Forms.TextBox tbType;
+    }
 }
 

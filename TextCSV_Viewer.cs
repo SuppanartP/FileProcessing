@@ -60,13 +60,28 @@ namespace FileProcessing
         /// <param name="e">The event data.</param>
 		private void btReadCSV_Click(object sender, EventArgs e)
 		{
+            // 1. ล้างข้อมูลเก่า
+            dgvData.Rows.Clear();
+            dgvData.Columns.Clear();
+
+            // 2. อ่านค่าจาก TextBox
+            int start = int.Parse(tbStart.Text);
+            int end = int.Parse(tbEnd.Text);
+            string fileType = tbType.Text.Trim().ToLower();
+
+            // 3. ตรวจสอบช่วง
+            if (end < start)
+            {
+                MessageBox.Show("Invalid Range");
+                return;
+            }
             using (StreamReader srReader = new StreamReader(tbFileName.Text))
             {
                 string strLine; // Variable to hold each line read from the file
 				bool bHeaderRead = false;   // Flag to indicate whether the header line has been read
-
-				// Main loop: Read the file line by line
-				while ((strLine = srReader.ReadLine()) != null)
+                int row = 0;                // นับจำนวนแถวข้อมูล
+                //Main loop: Read the file line by line
+                while ((strLine = srReader.ReadLine()) != null)
                 {
                     string[] strHeaders_arr = null;
 					// Skip comment lines and check for header line
@@ -99,8 +114,23 @@ namespace FileProcessing
                     }
                     else
                     {
-						// Add the values to the DataGridView rows
-						dgvData.Rows.Add(strValues_arr);
+                        
+                        row++;
+
+                        // Partial Loading (m-n)
+                        if (row < start || row > end)
+                            continue;
+
+                        // Filter type
+                        if (!string.IsNullOrEmpty(fileType))
+                        {
+                            string currentType = strValues_arr[1].Trim().ToLower();
+
+                            if (currentType != fileType)
+                                continue;
+                        }
+                        // Add the values to the DataGridView rows
+                        dgvData.Rows.Add(strValues_arr);
                     }
 				}   // Main loop: Read the file line by line
 			}
