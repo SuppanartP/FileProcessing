@@ -47,7 +47,8 @@
             this.lblEnd = new System.Windows.Forms.Label();
             this.tbEnd = new System.Windows.Forms.TextBox();
             this.lblType = new System.Windows.Forms.Label();
-            this.tbType = new System.Windows.Forms.TextBox();
+            this.tbFilter = new System.Windows.Forms.TextBox();
+            this.btLoadCSV = new System.Windows.Forms.Button();
             this.tabcMain.SuspendLayout();
             this.tabpText.SuspendLayout();
             this.tabpCSV.SuspendLayout();
@@ -70,6 +71,7 @@
             this.tbFileName.Size = new System.Drawing.Size(809, 22);
             this.tbFileName.TabIndex = 1;
             this.tbFileName.Text = "D:\\YutData\\DistributedHome\\cdti.Code\\FileProcessing\\data\\malware_500.csv";
+            this.tbFileName.TextChanged += new System.EventHandler(this.tbFileName_TextChanged);
             // 
             // btBrowse
             // 
@@ -100,7 +102,7 @@
             this.tabpText.Controls.Add(this.btRead);
             this.tabpText.Location = new System.Drawing.Point(4, 25);
             this.tabpText.Name = "tabpText";
-            this.tabpText.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabpText.Padding = new System.Windows.Forms.Padding(3);
             this.tabpText.Size = new System.Drawing.Size(1048, 755);
             this.tabpText.TabIndex = 0;
             this.tabpText.Text = "Text";
@@ -134,8 +136,8 @@
             this.tabpCSV.Controls.Add(this.btReadCSV);
             this.tabpCSV.Location = new System.Drawing.Point(4, 25);
             this.tabpCSV.Name = "tabpCSV";
-            this.tabpCSV.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabpCSV.Size = new System.Drawing.Size(1048, 860);
+            this.tabpCSV.Padding = new System.Windows.Forms.Padding(3);
+            this.tabpCSV.Size = new System.Drawing.Size(1048, 755);
             this.tabpCSV.TabIndex = 1;
             this.tabpCSV.Text = "CSV";
             this.tabpCSV.UseVisualStyleBackColor = true;
@@ -202,9 +204,9 @@
             this.lblStart.AutoSize = true;
             this.lblStart.Location = new System.Drawing.Point(90, 47);
             this.lblStart.Name = "lblStart";
-            this.lblStart.Size = new System.Drawing.Size(56, 16);
+            this.lblStart.Size = new System.Drawing.Size(62, 16);
             this.lblStart.TabIndex = 4;
-            this.lblStart.Text = "Start (m)";
+            this.lblStart.Text = "Start (m) :";
             // 
             // tbStart
             // 
@@ -218,9 +220,9 @@
             this.lblEnd.AutoSize = true;
             this.lblEnd.Location = new System.Drawing.Point(90, 82);
             this.lblEnd.Name = "lblEnd";
-            this.lblEnd.Size = new System.Drawing.Size(49, 16);
+            this.lblEnd.Size = new System.Drawing.Size(55, 16);
             this.lblEnd.TabIndex = 6;
-            this.lblEnd.Text = "End (n)";
+            this.lblEnd.Text = "End (n) :";
             // 
             // tbEnd
             // 
@@ -234,23 +236,34 @@
             this.lblType.AutoSize = true;
             this.lblType.Location = new System.Drawing.Point(90, 115);
             this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(64, 16);
+            this.lblType.Size = new System.Drawing.Size(70, 16);
             this.lblType.TabIndex = 8;
-            this.lblType.Text = "File Type";
+            this.lblType.Text = "File Type :";
             // 
-            // tbType
+            // tbFilter
             // 
-            this.tbType.Location = new System.Drawing.Point(170, 115);
-            this.tbType.Name = "tbType";
-            this.tbType.Size = new System.Drawing.Size(100, 22);
-            this.tbType.TabIndex = 9;
+            this.tbFilter.Location = new System.Drawing.Point(170, 115);
+            this.tbFilter.Name = "tbFilter";
+            this.tbFilter.Size = new System.Drawing.Size(100, 22);
+            this.tbFilter.TabIndex = 9;
+            // 
+            // btLoadCSV
+            // 
+            this.btLoadCSV.Location = new System.Drawing.Point(341, 97);
+            this.btLoadCSV.Name = "btLoadCSV";
+            this.btLoadCSV.Size = new System.Drawing.Size(143, 40);
+            this.btLoadCSV.TabIndex = 10;
+            this.btLoadCSV.Text = "Load CSV";
+            this.btLoadCSV.UseVisualStyleBackColor = true;
+            this.btLoadCSV.Click += new System.EventHandler(this.btLoadCSV_Click);
             // 
             // frmTextView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1077, 783);
-            this.Controls.Add(this.tbType);
+            this.Controls.Add(this.btLoadCSV);
+            this.Controls.Add(this.tbFilter);
             this.Controls.Add(this.lblType);
             this.Controls.Add(this.tbEnd);
             this.Controls.Add(this.lblEnd);
@@ -292,7 +305,8 @@
         private System.Windows.Forms.Label lblEnd;
         private System.Windows.Forms.TextBox tbEnd;
         private System.Windows.Forms.Label lblType;
-        private System.Windows.Forms.TextBox tbType;
+        private System.Windows.Forms.TextBox tbFilter;
+        private System.Windows.Forms.Button btLoadCSV;
     }
 }
 
